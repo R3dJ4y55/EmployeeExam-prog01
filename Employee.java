@@ -10,6 +10,7 @@ public class Employee{
     private boolean onLeave;
     private double hourlyWage;
     private double unpaidHours;
+    private int vacationDays;
 
     public Employee(String fullname, int yearOfBirth, double hourlyWage){
         this.fullname = fullname;
@@ -17,6 +18,7 @@ public class Employee{
         this.hourlyWage = hourlyWage;
         onLeave = false;
         unpaidHours = 0.0;
+        vacationDays = 14;
     }
     
     /**
@@ -75,7 +77,23 @@ public class Employee{
     
     //Improvements
     
+        //workShift
     public void workShift(double hoursWorked){
         unpaidHours += hoursWorked;
+    }
+    
+        //VacationDays
+    public void useVacationDays(int numberOfDays){
+        if (vacationDays >= numberOfDays){
+        vacationDays -= numberOfDays;
+        } else {
+            System.out.printf("You only have %d vacation days remaining. %n", vacationDays);
+        }
+    }
+    public int getVacationDays(){
+        return vacationDays;
+    }
+    public void setVacationDays(int numberOfDays){
+        vacationDays = numberOfDays;
     }
 }
