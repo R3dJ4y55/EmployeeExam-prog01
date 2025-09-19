@@ -86,14 +86,20 @@ public class Employee{
     public void useVacationDays(int numberOfDays){
         if (vacationDays >= numberOfDays){
         vacationDays -= numberOfDays;
+        onLeave = true;
         } else {
             System.out.printf("You only have %d vacation days remaining. %n", vacationDays);
         }
+    }
+    public void returnFromVacation(){
+        onLeave = false;
+        System.out.printf("%s has returned from vacation. They have %d vacation days remaining.%n", fullname, vacationDays);
     }
     public int getVacationDays(){
         return vacationDays;
     }
     public void setVacationDays(int numberOfDays){
+        System.out.printf("Number of vacation days for %s changed from %d days to %d days.%n", fullname, vacationDays, numberOfDays);
         vacationDays = numberOfDays;
     }
 }
