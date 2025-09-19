@@ -71,4 +71,11 @@ public class Employee{
         System.out.printf("%s has received a wire transfer of %.2f + CAD %n", fullname, pay);
         unpaidHours = 0.0;
     }
+    
+    
+    //Improvements
+    
+    public void workShift(double hoursWorked){
+        unpaidHours += hoursWorked;
+    }
 }
