@@ -25,26 +25,50 @@ public class Employee{
     private int calculateAge(int currentYear){
         return (currentYear - yearOfBirth);
     }
-
+    
+    // Question 11
+        //Setter
+    public void setOnLeave(boolean isOnLeave){
+        onLeave = isOnLeave;
+    }
+        //Getter
+    public boolean getOnLeave(){
+        return onLeave;
+    }
+    
+    // Question 12
     /**
      * Returns true is an employee is above 16 years old
      */
     public boolean canDrive(){
         int age = calculateAge(2025);
-        // to be completed
+        if (age >= 16) {
+            System.out.println("This employee can drive.");
+            return true;
+        } else {
+            int remainingYears = 16 - age;
+            System.out.printf("The employee can start driving in %d years %n", remainingYears);
+            return false;
+        }
     }
-
+    
+    // Question 13
     /*
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
-        // to be completed
+      double total = unpaidHours * hourlyWage;
+      double netPay = total - (total * 0.3);
+      return netPay;
     }
 
+    // Question 14
     /*
      * Output the payment record and resets unpaid hours
      */
     public void paySalary(){
-        // to be completed
+        double pay = calculatePay();
+        System.out.println(fullname + "has received a wire transfer of" + pay + "CAD");
+        unpaidHours = 0.0;
     }
 }
