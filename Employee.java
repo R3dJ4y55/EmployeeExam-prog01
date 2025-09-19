@@ -68,7 +68,7 @@ public class Employee{
      */
     public void paySalary(){
         double pay = calculatePay();
-        System.out.println(fullname + " has received a wire transfer of " + pay + "CAD");
+        System.out.printf("%s has received a wire transfer of %.2f + CAD %n", fullname, pay);
         unpaidHours = 0.0;
     }
 }
